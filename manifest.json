@@ -2,7 +2,7 @@
   "name": "ふれる。",
   "short_name": "ふれる",
   "description": "さわると動く。声に反応する。子どもと一緒に遊べるインタラクティブアート。",
-  "start_url": "/",
+  "start_url": "/fureru/",
   "display": "standalone",
   "background_color": "#FF1744",
   "theme_color": "#FF1744",
