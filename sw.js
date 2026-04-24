@@ -1,10 +1,10 @@
 const CACHE = 'fureru-v2';
 const FILES = [
-  '/fureru/',
-  '/fureru/index.html',
-  '/fureru/manifest.json',
-  '/fureru/icon-192.png',
-  '/fureru/icon-512.png'
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/icon-192.png',
+  '/icon-512.png'
 ];
 
 self.addEventListener('install', e => {
