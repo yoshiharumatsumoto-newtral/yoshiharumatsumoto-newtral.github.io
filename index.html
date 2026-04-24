@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>ふれる。</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="ふれる。">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Noto+Sans+JP:wght@200;300&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: #000000;
+    color: rgba(255,255,255,0.88);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 200;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: up 1s ease 0.2s forwards;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: rgba(255,255,255,0.70);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(32px, 7vw, 56px);
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.15;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+  }
+
+  nav {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.18);
+  }
+
+  a.work {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000000;
+    padding: 28px 24px;
+    text-decoration: none;
+    opacity: 0;
+    transition: background 0.3s;
+  }
+
+  a.work:nth-child(1) { animation: up 0.8s ease 0.5s forwards; }
+  a.work:nth-child(2) { animation: up 0.8s ease 0.65s forwards; }
+  a.work:nth-child(3) { animation: up 0.8s ease 0.8s forwards; }
+
+  a.work:hover { background: rgba(255,255,255,0.04); }
+  a.work:active { background: rgba(255,255,255,0.07); opacity: 0.6; }
+
+  .work-left { display: flex; flex-direction: column; gap: 6px; }
+
+  .work-num {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .work-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.92);
+  }
+
+  .work-desc {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.65);
+    margin-top: 2px;
+  }
+
+  .work-arrow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    transition: transform 0.3s, color 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  a.work:hover .work-arrow {
+    transform: translateX(4px);
+    color: rgba(255,255,255,0.55);
+  }
+
+  footer {
+    margin-top: 56px;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: rgba(255,255,255,0.45);
+    opacity: 0;
+    animation: up 0.8s ease 1.1s forwards;
+  }
+
+  @keyframes up {
+    from { opacity:0; transform: translateY(12px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Interactive Art</p>
+  <h1>ふれる。</h1>
+</header>
+
+<nav>
+  <a class="work" href="https://linehandinteraction.netlify.app/" target="_blank">
+    <div class="work-left">
+      <span class="work-num">01</span>
+      <span class="work-title">Light Threads</span>
+      <span class="work-desc">さわると糸が吸いつく　声に反応する</span>
+    </div>
+    <span class="work-arrow">→</span>
+  </a>
+
+  <a class="work" href="https://dothandinteraction.netlify.app/" target="_blank">
+    <div class="work-left">
+      <span class="work-num">02</span>
+      <span class="work-title">Dot Threads</span>
+      <span class="work-desc">点の連なりが指に反応する</span>
+    </div>
+    <span class="work-arrow">→</span>
+  </a>
+
+  <a class="work" href="https://playgroundinteraction.netlify.app/" target="_blank">
+    <div class="work-left">
+      <span class="work-num">03</span>
+      <span class="work-title">Cosmic Rings</span>
+      <span class="work-desc">触れると弾ける　宇宙の輪</span>
+    </div>
+    <span class="work-arrow">→</span>
+  </a>
+</nav>
+
+<footer>© Newtral. Inc</footer>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
+</body>
+</html>
