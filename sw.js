@@ -1,4 +1,4 @@
-const CACHE = 'fureru-v3';
+const CACHE = 'fureru-v4';
 const FILES = [
   '/',
   '/index.html',
