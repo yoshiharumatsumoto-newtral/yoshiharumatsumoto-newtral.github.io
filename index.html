@@ -60,11 +60,6 @@
     line-height: 1.15;
   }
 
-  h1 em {
-    font-style: italic;
-    color: rgba(255,255,255,0.55);
-  }
-
   nav {
     width: 100%;
     max-width: 400px;
@@ -83,15 +78,39 @@
     text-decoration: none;
     opacity: 0;
     transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
   }
+
+  a.work::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    transition: opacity 0.4s;
+  }
+
+  a.work:nth-child(1)::before { background-image: url('thumb-01.jpg'); }
+  a.work:nth-child(2)::before { background-image: url('thumb-02.jpg'); }
+  a.work:nth-child(3)::before { background-image: url('thumb-03.jpg'); }
+  a.work:nth-child(4)::before { background-image: url('thumb-04.jpg'); }
+
+  a.work:hover::before { opacity: 0.18; }
 
   a.work:nth-child(1) { animation: up 0.8s ease 0.5s forwards; }
   a.work:nth-child(2) { animation: up 0.8s ease 0.65s forwards; }
   a.work:nth-child(3) { animation: up 0.8s ease 0.8s forwards; }
   a.work:nth-child(4) { animation: up 0.8s ease 0.95s forwards; }
 
-  a.work:hover { background: rgba(255,255,255,0.04); }
-  a.work:active { background: rgba(255,255,255,0.07); opacity: 0.6; }
+  a.work:hover { background: rgba(255,255,255,0.02); }
+  a.work:active { opacity: 0.6; }
+
+  .work-left, .work-arrow {
+    position: relative;
+    z-index: 1;
+  }
 
   .work-left { display: flex; flex-direction: column; gap: 6px; }
 
